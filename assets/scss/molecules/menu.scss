@@ -1,0 +1,173 @@
+.menu {
+  list-style: none;
+  display: block;
+  padding: 0;
+
+  ul, li {
+    list-style: none;
+    display: block;
+  }
+
+  &--scrollable {
+    overflow-y: scroll;
+  }
+}
+
+.menu_item {
+  position: relative;
+
+  &--dropdown {
+    & > %menu_level {
+      display: none;
+    }
+
+    &.current,
+    &.current_ancestor {
+      & > %menu_level {
+        display: block;
+      }
+    }
+  }
+}
+
+.menu_link {
+  cursor: pointer;
+}
+
+%menu_level {
+}
+
+// Level 0
+.menu_level_0 {
+  @extend %menu_level;
+
+  // Item
+
+  & > .menu_item {
+    border-bottom: 1px solid $gray-700;
+  }
+
+  // Link
+
+  & > .menu_item > .menu_link {
+    position: relative;
+    display: block;
+    padding: 1em;
+    color: $gray-600;
+    border-left: 5px solid transparent;
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  & > .menu_item.current > .menu_link,
+  & > .menu_item.current_ancestor > .menu_link {
+    border-left-color: $primary;
+    color: $white;
+  }
+}
+
+// Level 1
+.menu_level_1 {
+  @extend %menu_level;
+  padding: 0 1em;
+
+  background: $gray-700;
+
+  // Item
+
+  & > .menu_item {
+    font-size: 16px;
+
+    & + .menu_item--separate {
+      margin-top: 10px;
+      padding-top: 5px;
+      border-top: 1px solid lighten($gray-700, 10);
+    }
+  }
+
+  // Link
+
+  & > .menu_item > .menu_link {
+    position: relative;
+    display: block;
+    padding: 0.8em 0;
+    color: $gray-500;
+
+    .icon {
+      color: $gray-600;
+    }
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  & > .menu_item.current > .menu_link,
+  & > .menu_item.current_ancestor > .menu_link {
+    color: $white;
+
+    .icon {
+      color: $white;
+    }
+
+    .fa-folder:before {
+      content: '\f07c';
+    }
+  }
+}
+
+// Level 2
+.menu_level_2 {
+  @extend %menu_level;
+  padding: 0 1em;
+
+  // Item
+
+  & > .menu_item {
+    font-size: 14px;
+
+    & + .menu_item--separate {
+      margin-top: 10px;
+      padding-top: 5px;
+      border-top: 1px solid lighten($gray-700, 10);
+    }
+  }
+
+  // Link
+
+  & > .menu_item > .menu_link {
+    position: relative;
+    display: block;
+    padding: 0.3em 0.4em;
+    margin: 0.4em 0;
+    color: $gray-500;
+
+    .icon {
+      color: $gray-600;
+    }
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  & > .menu_item.current > .menu_link,
+  & > .menu_item.current_ancestor > .menu_link {
+    color: $white;
+    background: lighten($gray-700, 5);
+    border-radius: 3px;
+
+    .icon {
+      color: $white;
+    }
+
+    .fa-folder:before {
+      content: '\f07c';
+    }
+  }
+}

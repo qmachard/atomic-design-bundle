@@ -12,4 +12,7 @@ return [
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
     Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true],
     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
+    QuentinMachard\Bundle\AtomicDesignBundle\AtomicDesignBundle::class => ['dev' => true],
+    Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
+    Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
 ];

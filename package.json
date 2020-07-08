@@ -1,0 +1,24 @@
+{
+  "name": "atomic-design-bundle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Quentin Machard <quentin.machard@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.30.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "node-sass": "^4.14.1",
+    "popper.js": "^1.16.1",
+    "sass-loader": "^9.0.2"
+  },
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production"
+  }
+}

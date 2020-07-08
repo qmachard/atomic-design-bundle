@@ -11,7 +11,7 @@
         "front-end",
         "css"
     ],
-    "homepage": "", &
+    "homepage": "",
     "license": "MIT",
     "authors": [
         {
@@ -21,9 +21,11 @@
     ],
     "require": {
         "php": "^7.3",
-        "symfony/framework-bundle": "^4.4"
+        "symfony/framework-bundle": "^4.4",
+        "qmachard/atomic-design-bundle": "*"
     },
     "require-dev": {
+        "symfony/webpack-encore-bundle": "^1.7"
     },
     "config": {
         "bin-dir": "bin"
@@ -40,9 +42,13 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "QuentinMachard\\Bundle\\AtomicDesignBundle\\spec\\": "spec/"
+            "QuentinMachard\\Bundle\\AtomicDesignBundle\\spec\\": "spec"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "repositories": [
+        {
+            "type": "path",
+            "url": "src"
+        }
+    ]
 }

@@ -9,3 +9,5 @@ test/app/logs
 
 .idea
 .DS_Store
+
+node_modules

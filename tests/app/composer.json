@@ -5,6 +5,7 @@
         "php": "^7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "knplabs/knp-menu-bundle": "^3.0",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "5.1.*",
         "symfony/console": "5.1.*",
@@ -85,5 +86,11 @@
             "allow-contrib": false,
             "require": "5.1.*"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../src"
+        }
+    ]
 }

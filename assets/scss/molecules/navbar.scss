@@ -1,0 +1,43 @@
+.navbar {
+  padding-left: 70px;
+  height: 70px;
+  border-bottom: 1px solid $gray-200;
+  margin-left: $sidebar-base-width;
+  background: $white;
+  display: flex;
+  justify-content: space-between;
+  transition: margin-left .5s;
+
+  .body--sidebar-open & {
+    margin-left: 0;
+  }
+}
+
+.navbar_right {
+  text-align: right;
+}
+
+.navbar-brand {
+  margin: 0;
+}
+
+.navbar-nav {
+  & + .navbar-nav {
+    margin-top: 30px;
+  }
+}
+
+.navbar_breadcrumb {
+  display: block;
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+    display: inline-block;
+  }
+
+  .separator {
+    margin: 0 5px;
+  }
+}

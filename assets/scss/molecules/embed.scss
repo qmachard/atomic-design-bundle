@@ -1,0 +1,20 @@
+@import '../theme/variables';
+
+.embed {
+  background: white;
+
+  &.responsive {
+    transition: height 1s, width 1s;
+    max-width: none;
+  }
+
+  // MODIFIERS
+
+  &--loading {}
+}
+
+.embed_iframe {
+  .embed--loading & {
+    opacity: 0;
+  }
+}

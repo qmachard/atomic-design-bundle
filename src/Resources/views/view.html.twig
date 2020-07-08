@@ -1,0 +1,17 @@
+{% extends '@AtomicDesign/layout.html.twig' %}
+
+{% block navbar %}
+    <div class="navbar_left">
+        <div class="navbar-brand">
+            {{ component.name }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid component">
+    <div class="component_embed embed">
+        <iframe class="embed_iframe" src="{{ path('_atomic_design_embed', { component: component.name, story: story }) }}" frameborder="0" width="100%"></iframe>
+    </div>
+</div>
+{% endblock %}

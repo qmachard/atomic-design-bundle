@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults autowire="true" autoconfigure="true" public="false"/>
+
+        <service id="atomic_design.provider.component" class="QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProvider"/>
+
+        <service id="atomic_design.controller.story" class="QuentinMachard\Bundle\AtomicDesignBundle\Controller\StoryController" public="true">
+            <argument type="service" id="atomic_design.provider.component"/>
+            <argument type="service" id="profiler"/>
+        </service>
+    </services>
+</container>

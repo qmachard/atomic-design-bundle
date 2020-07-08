@@ -1,0 +1,28 @@
+<div class="sidebar">
+    <button class="sidebar_toggle btn btn-lg"><i class="icon fas fa-angle-double-left"></i></button>
+
+    <a href="{{ path('_atomic_design_index') }}" class="sidebar_brand">Atomic Design</a>
+
+    <nav class="sidebar_nav">
+        <ul class="menu menu_level_0">
+            {% for component in components %}
+                <li class="menu_item">
+                    <a class="menu_link" href="{{ path('_atomic_design_view', {component: component.name}) }}">
+                        {{ component.name }}
+                    </a>
+
+                    <ul class="menu menu_level_1">
+                        {% for story in component.stories %}
+                            <li class="menu_item">
+                                <a class="menu_link" href="{{ path('_atomic_design_view', {component: component.name, story: story}) }}">
+                                    {{ story }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </nav>
+</div>

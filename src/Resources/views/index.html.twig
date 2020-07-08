@@ -1,0 +1,9 @@
+{% extends '@AtomicDesign/layout.html.twig' %}
+
+{% block body %}
+    <ul>
+        {% for component in components %}
+            <li><a href="{{ path('_atomic_design_view', {component: component.name}) }}">{{ component.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
