@@ -1,0 +1,48 @@
+{
+    "name": "qmachard/atomic-design-bundle",
+    "type": "symfony-bundle",
+    "description": "Atomic Design System for Symfony.",
+    "keywords": [
+        "atomic",
+        "design",
+        "system",
+        "html",
+        "integration",
+        "front-end",
+        "css"
+    ],
+    "homepage": "", &
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Quentin Machard",
+            "homepage": "http://www.quentinmachard.fr"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "symfony/framework-bundle": "^4.4"
+    },
+    "require-dev": {
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.6-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "QuentinMachard\\Bundle\\AtomicDesignBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "QuentinMachard\\Bundle\\AtomicDesignBundle\\spec\\": "spec/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

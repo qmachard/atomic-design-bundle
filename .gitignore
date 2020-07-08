@@ -1,0 +1,11 @@
+vendor/
+bin/
+
+composer.phar
+composer.lock
+
+test/app/cache
+test/app/logs
+
+.idea
+.DS_Store
