@@ -42,10 +42,18 @@ class StoryController extends AbstractController
 
     public function index(): Response
     {
-        return $this->render('@AtomicDesign/index.html.twig', [
-            'menu' => $this->menuBuilder->createView(),
-            'components' => $this->componentProvider->getComponents(),
-        ]);
+        $components = $this->componentProvider->getComponents();
+
+        foreach ($components as $component) {
+            foreach ($component->getStories() as $story) {
+                return $this->redirectToRoute('_atomic_design_view', [
+                    'component' => $component->getName(),
+                    'story' => $story
+                ]);
+            }
+        }
+
+        throw new NotFoundHttpException('No Stories Found.');
     }
 
     public function view(string $component, string $story = ''): Response
