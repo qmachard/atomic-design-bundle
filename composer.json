@@ -21,7 +21,7 @@
     ],
     "require": {
         "php": "^7.3",
-        "symfony/framework-bundle": "^4.4",
+        "symfony/framework-bundle": "5.1.*",
         "qmachard/atomic-design-bundle": "*"
     },
     "require-dev": {
