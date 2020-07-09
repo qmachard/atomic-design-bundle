@@ -14,6 +14,13 @@ interface ComponentInterface
     public function getName(): string;
 
     /**
+     * Get Category of the Component
+     *
+     * @return string
+     */
+    public function getCategory(): string;
+
+    /**
      * Get List of Stories.
      *
      * @return string[]

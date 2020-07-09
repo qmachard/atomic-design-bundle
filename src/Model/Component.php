@@ -23,6 +23,16 @@ abstract class Component implements ComponentInterface
     }
 
     /**
+     * Get the Category.
+     *
+     * @return string
+     */
+    public function getCategory(): string
+    {
+        return 'Global';
+    }
+
+    /**
      * @inheritDoc
      */
     final public function renderStory(string $name): string

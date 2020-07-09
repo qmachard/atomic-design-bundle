@@ -10,8 +10,15 @@
         <service id="atomic_design.provider.component" class="QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProvider"/>
 
         <service id="atomic_design.controller.story" class="QuentinMachard\Bundle\AtomicDesignBundle\Controller\StoryController" public="true">
+            <argument type="string"/>
+            <argument type="string"/>
             <argument type="service" id="atomic_design.provider.component"/>
             <argument type="service" id="profiler"/>
+            <argument type="service" id="atomic_design.menu_builder"/>
+        </service>
+
+        <service id="atomic_design.menu_builder" class="QuentinMachard\Bundle\AtomicDesignBundle\Menu\ComponentMenuBuilder">
+            <argument type="service" id="atomic_design.provider.component"/>
         </service>
     </services>
 </container>

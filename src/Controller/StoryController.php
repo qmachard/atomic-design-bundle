@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace QuentinMachard\Bundle\AtomicDesignBundle\Controller;
 
+use QuentinMachard\Bundle\AtomicDesignBundle\Menu\ComponentMenuBuilder;
 use QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,23 +17,33 @@ class StoryController extends AbstractController
     private $componentProvider;
 
     /** @var string */
-    private $cssPath;
+    private $cssEntryName;
 
     /** @var string */
-    private $jsPath;
+    private $jsEntryName;
 
-    public function __construct(ComponentProvider $componentProvider, Profiler $profiler, string $cssPath = '', string $jsPath = '')
-    {
+    /** @var ComponentMenuBuilder */
+    private $menuBuilder;
+
+    public function __construct(
+        string $cssEntryName = '',
+        string $jsEntryName = '',
+        ComponentProvider $componentProvider,
+        Profiler $profiler,
+        ComponentMenuBuilder $menuBuilder
+    ) {
         $profiler->disable();
 
         $this->componentProvider = $componentProvider;
-        $this->cssPath = $cssPath;
-        $this->jsPath = $jsPath;
+        $this->cssEntryName = $cssEntryName;
+        $this->jsEntryName = $jsEntryName;
+        $this->menuBuilder = $menuBuilder;
     }
 
     public function index(): Response
     {
         return $this->render('@AtomicDesign/index.html.twig', [
+            'menu' => $this->menuBuilder->createView(),
             'components' => $this->componentProvider->getComponents(),
         ]);
     }
@@ -50,7 +61,7 @@ class StoryController extends AbstractController
         }
 
         return $this->render('@AtomicDesign/view.html.twig', [
-            'components' => $this->componentProvider->getComponents(),
+            'menu' => $this->menuBuilder->createView(),
             'component' => $component,
             'story' => $story,
         ]);
@@ -64,8 +75,8 @@ class StoryController extends AbstractController
 
         return $this->render('@AtomicDesign/embed.html.twig', [
             'render' => $render,
-            'css_path' => $this->cssPath,
-            'js_path' => $this->jsPath,
+            'css_entry_name' => $this->cssEntryName,
+            'js_entry_name' => $this->jsEntryName,
         ]);
     }
 }
