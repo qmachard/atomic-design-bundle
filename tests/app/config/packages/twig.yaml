@@ -1,4 +1,4 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
     paths:
-        'src/AtomicDesign/Components': 'components'
+        'assets/components': 'components'

@@ -1,0 +1,5 @@
+services:
+  App\Tests\AtomicDesign\:
+    resource: '../tests/AtomicDesign/*'
+    autoconfigure: true
+    autowire: true

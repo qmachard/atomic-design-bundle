@@ -22,9 +22,7 @@
     "require": {
         "php": "^7.3",
         "symfony/framework-bundle": "5.1.*",
-        "qmachard/atomic-design-bundle": "*"
-    },
-    "require-dev": {
+        "qmachard/atomic-design-bundle": "*",
         "symfony/webpack-encore-bundle": "^1.7"
     },
     "config": {

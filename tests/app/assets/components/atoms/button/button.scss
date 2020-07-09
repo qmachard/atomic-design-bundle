@@ -1,0 +1,15 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1), 0 3px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-weight: 100;
+  font-size: 16px;
+  color: var(--color-text-button);
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
