@@ -1,6 +1,18 @@
 <h1 align="center">
     <img src="./doc/atomic-design.png" alt="atomic-design" />
+    <br />
+    <a href="./LICENSE.md" title="Licence MIT">
+        <img src="https://img.shields.io/packagist/l/qmachard/atomic-design-bundle" />
+    </a>
+    <a href="https://packagist.org/packages/qmachard/atomic-design-bundle" title="Packagist">
+        <img src="https://img.shields.io/packagist/v/qmachard/atomic-design-bundle?include_prereleases" />
+    </a>
+    <a href="https://packagist.org/packages/qmachard/atomic-design-bundle" title="PHP 7.3">
+        <img src="https://img.shields.io/packagist/php-v/qmachard/atomic-design-bundle" />
+    </a>
 </h1>
+
+
 
 Atomic Design is a StoryBook like bundle made for Symfony.
 
