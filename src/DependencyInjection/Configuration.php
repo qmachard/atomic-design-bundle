@@ -16,8 +16,12 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->getRootNode();
         $rootNode
             ->children()
-            ->scalarNode('css_path')->info('Project CSS path.')->end()
-            ->scalarNode('js_path')->info('Project JS path.')->end()
+            ->scalarNode('css_entry_name')
+                ->info('Encore CSS entry name.')
+            ->end()
+            ->scalarNode('js_entry_name')
+                ->info('Encore JS entry name.')
+            ->end()
         ;
 
         return $treeBuilder;
