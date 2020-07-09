@@ -15,11 +15,19 @@ class StoryController extends AbstractController
     /** @var ComponentProvider */
     private $componentProvider;
 
-    public function __construct(ComponentProvider $componentProvider, Profiler $profiler)
+    /** @var string */
+    private $cssPath;
+
+    /** @var string */
+    private $jsPath;
+
+    public function __construct(ComponentProvider $componentProvider, Profiler $profiler, string $cssPath = '', string $jsPath = '')
     {
         $profiler->disable();
 
         $this->componentProvider = $componentProvider;
+        $this->cssPath = $cssPath;
+        $this->jsPath = $jsPath;
     }
 
     public function index(): Response
@@ -56,6 +64,8 @@ class StoryController extends AbstractController
 
         return $this->render('@AtomicDesign/embed.html.twig', [
             'render' => $render,
+            'css_path' => $this->cssPath,
+            'js_path' => $this->jsPath,
         ]);
     }
 }

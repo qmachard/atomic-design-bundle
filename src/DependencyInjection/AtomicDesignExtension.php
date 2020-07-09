@@ -22,5 +22,13 @@ class AtomicDesignExtension extends Extension
 
         $container->registerForAutoconfiguration(ComponentInterface::class)
             ->addTag('atomic_design.component');
+
+        $configuration = $this->getConfiguration($configs, $container);
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $definition = $container->getDefinition('atomic_design.controller.story');
+
+        $definition->setArgument(2, $config['css_path']);
+        $definition->setArgument(3, $config['js_path']);
     }
 }
