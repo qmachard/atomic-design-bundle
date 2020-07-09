@@ -374,10 +374,23 @@ a {
   text-decoration: none;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif, sans-serif;
   background: #212529;
   color: #f8f9fa;
+  display: flex;
+  height: 100%;
+}
+
+.container-fluid {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin-left: 250px;
 }
 
 .menu {
@@ -411,6 +424,27 @@ body {
   display: block;
   padding: 10px 40px 10px 40px;
   font-size: 14px;
+}
+
+.render {
+  display: block;
+  position: relative;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+  background: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin: 20px;
+}
+
+.render_iframe {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .sidebar {
