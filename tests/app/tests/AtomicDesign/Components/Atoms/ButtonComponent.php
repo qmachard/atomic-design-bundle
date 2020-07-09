@@ -16,21 +16,64 @@ class ButtonComponent extends Component
     public function getStories(): array
     {
         return [
-            'Primary' => 'storyPrimary',
+            'Colors' => 'colors',
+            'Outlines' => 'outlines',
+            'Sizes' => 'sizes',
         ];
     }
 
-    public function getDefaultStory(): string
+    public function colors(): string
     {
-        return 'storyPrimary';
+        $colors = ['secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
+
+        $buttons = [];
+
+        foreach ($colors as $color) {
+            $buttons[] = $this->render('@components/atoms/button/button.html.twig', [
+                'props' => [
+                    'label' => ucfirst($color),
+                    'color' => $color
+                ]
+            ]);
+        }
+
+        return join(' ', $buttons);
     }
 
-    public function storyPrimary(): string
+    public function outlines(): string
     {
-        return $this->render('@components/atoms/button/button.html.twig', [
-            'props' => [
-                'label' => 'Primary',
-            ],
-        ]);
+        $colors = ['secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
+
+        $buttons = [];
+
+        foreach ($colors as $color) {
+            $buttons[] = $this->render('@components/atoms/button/button.html.twig', [
+                'props' => [
+                    'label' => ucfirst($color),
+                    'color' => 'outline-' . $color,
+                ]
+            ]);
+        }
+
+        return join(' ', $buttons);
+    }
+
+    public function sizes(): string
+    {
+        $sizes = ['sm', 'md', 'lg'];
+
+        $buttons = [];
+
+        foreach ($sizes as $size) {
+            $buttons[] = $this->render('@components/atoms/button/button.html.twig', [
+                'props' => [
+                    'label' => 'Button ' . strtoupper($size),
+                    'color' => 'primary',
+                    'size' => $size,
+                ]
+            ]);
+        }
+
+        return join(' ', $buttons);
     }
 }

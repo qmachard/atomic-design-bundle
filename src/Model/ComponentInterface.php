@@ -28,13 +28,6 @@ interface ComponentInterface
     public function getStories(): array;
 
     /**
-     * Get the Default Story.
-     *
-     * @return string
-     */
-    public function getDefaultStory(): string;
-
-    /**
      * Render the template of story.
      *
      * @param string $name
