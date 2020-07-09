@@ -19,25 +19,10 @@
     {% block head %}{% endblock %}
 </head>
 <body {% block body_attributes %}{% endblock %}>
-    {% include '@AtomicDesign/sidebar.html.twig' %}
+{% include '@AtomicDesign/cellules/sidebar.html.twig' with { props: {
+    menu: menu
+} } %}
 
-    <div class="navbar fixed-top">
-        {% block navbar %}
-            <div class="navbar_left">
-                <div class="navbar-brand">
-{#                    {{ wo_render_breadcrumbs({'listClass': 'navbar_breadcrumb'}) }}#}
-                </div>
-            </div>
-            <div class="navbar_right">
-                {% block navbar_menu %}{% endblock %}
-            </div>
-        {% endblock %}
-    </div>
-
-    <main class="content-wrapper">
-        {% block body %}{% endblock %}
-    </main>
-
-    {% block javascripts %}{% endblock %}
+{% block javascripts %}{% endblock %}
 </body>
 </html>

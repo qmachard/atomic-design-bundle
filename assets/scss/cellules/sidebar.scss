@@ -1,0 +1,43 @@
+@import '../theme/variables';
+
+.sidebar {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: $sidebar-base-width;
+  height: 100vh;
+  transition: left .5s;
+  overflow: hidden;
+  overflow-y: auto;
+
+  .body--sidebar-open & {
+    left: -$sidebar-base-width;
+  }
+}
+
+.sidebar_brand {
+  display: block;
+  position: relative;
+  padding: 1em;
+  text-align: center;
+  font-size: 20px;
+  font-weight: $font-weight-light;
+  text-transform: uppercase;
+  color: $gray-200;
+  margin-bottom: 1em;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    border-top: 1px solid $gray-700;
+  }
+
+  &--em {
+    font-weight: $font-weight-bold;
+  }
+}

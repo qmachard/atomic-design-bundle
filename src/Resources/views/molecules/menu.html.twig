@@ -1,0 +1,27 @@
+<nav class="menu">
+    <ul class="menu_categories">
+        {% for category, components in props.menu %}
+            <li class="menu_categories_item">
+                <span class="menu_categories_label">{{ category }}</span>
+
+                <ul class="menu_components">
+                    {% for component, stories in components %}
+                        <li class="menu_components_item">
+                            <span class="menu_components_label">{{ component }}</span>
+
+                            <ul class="menu_stories">
+                                {% for story, path in stories %}
+                                    <li class="menu_stories_item">
+                                        <a class="menu_stories_link" href="{{ path('_atomic_design_view', { component: category ~ '|' ~ component, story: path }) }}">
+                                            {{ story }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

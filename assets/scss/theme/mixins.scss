@@ -1,0 +1,48 @@
+@import 'variables';
+
+// -- FONTS
+
+/// Declare a font-face
+///
+/// @param string  $font-family   Using name of font
+/// @param string  $name          Filename of font file
+/// @param string  $weight        Weight of font (100, 200, normal, bold, etc.) [optional]
+/// @param string  $style         Style of font (normal, italic, etc.) [optional]
+/// @param bool    $woff2         If font is woff2 format [optional]
+/// @output Font-face
+///
+@mixin font-face($font-family, $name, $weight: normal, $style: normal, $woff2: false) {
+  $file-path: $path-fonts + $name;
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    @if $woff2 == true {
+      src: url('#{$file-path}.woff') format('woff'),
+      url('#{$file-path}.woff2') format('woff2');
+    } @else {
+      src: url('#{$file-path}.woff') format('woff');
+    }
+  }
+}
+
+// -- Responsive
+
+@mixin screen-size ($breakpoint, $opts: false, $print: false) {
+  $media-string: false;
+  $min: 0;
+
+  @if $opts == only {
+    $media-string: '(min-width: #{$min}px) and (max-width: #{$breakpoint})';
+  }
+  @else if $opts == min {
+    $media-string: '(min-width: #{$breakpoint})';
+  }
+  @else {
+    $media-string: '(max-width: #{$breakpoint - 1})';
+  }
+
+  @media only screen and #{$media-string} {
+    @content;
+  }
+}
