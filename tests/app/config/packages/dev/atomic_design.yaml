@@ -1,0 +1,3 @@
+atomic_design:
+  css_path: '/app.css'
+  js_path: '/app.js'
