@@ -64,10 +64,10 @@ Manual Installation
 
 1. Configure your Components
 
-    Create file `service_dev.yaml` (is not already exists) in `config` folder and add this configuration
+    Create file `services_dev.yaml` (is not already exists) in `config` folder and add this configuration
     
     ```yaml
-    # config/service_dev.yaml
+    # config/services_dev.yaml
     services:
       App\Tests\AtomicDesign\:
         resource: '../tests/AtomicDesign'
