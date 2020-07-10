@@ -1,14 +1,14 @@
 <h1 align="center">
-    <img src="./doc/atomic-design.png" alt="atomic-design" />
+    <img src="./doc/atomic-design-banner.png" alt="atomic-design" />
     <br />
     <a href="./LICENSE.md" title="Licence MIT">
-        <img src="https://img.shields.io/packagist/l/qmachard/atomic-design-bundle" />
+        <img src="https://img.shields.io/packagist/l/qmachard/atomic-design-bundle" alt="Licence MIT" />
     </a>
     <a href="https://packagist.org/packages/qmachard/atomic-design-bundle" title="Packagist">
-        <img src="https://img.shields.io/packagist/v/qmachard/atomic-design-bundle?include_prereleases" />
+        <img src="https://img.shields.io/packagist/v/qmachard/atomic-design-bundle?include_prereleases" alt="Release Packagist" />
     </a>
     <a href="https://packagist.org/packages/qmachard/atomic-design-bundle" title="PHP 7.3">
-        <img src="https://img.shields.io/packagist/php-v/qmachard/atomic-design-bundle" />
+        <img src="https://img.shields.io/packagist/php-v/qmachard/atomic-design-bundle" alt="PHP 7.3" />
     </a>
 </h1>
 
@@ -74,6 +74,13 @@ Manual Installation
         tags: ['atomic_design.component']
         autoconfigure: true
         autowire: true
+    ```
+
+1. Install assets and clear cache
+
+    ```bash
+    $ php bin/console assets:install
+    $ php bin/console cache:clear
     ```
 
 Create your First Component "Playground"
