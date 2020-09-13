@@ -26,7 +26,7 @@ Step 1: Enabled the Bundle
 Step 2: Configure the Bundle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create file `atomic_design.yaml` into `config/packages/dev` folder. Setting you Encore entry points.
+Create file `atomic_design.yaml` into `config/packages/dev` folder. Setting you Encore entry points (default `app`).
 
 .. code-block:: yaml
 
@@ -34,6 +34,19 @@ Create file `atomic_design.yaml` into `config/packages/dev` folder. Setting you 
     atomic_design:
       css_entry_name: 'app'
       js_entry_name: 'app'
+
+Example of Webpack configuration using `app` entry point.
+
+.. code-block:: javascript
+
+    var Encore = require('@symfony/webpack-encore');
+
+    Encore
+        // ...
+        .addEntry('app', './assets/js/app.js');
+
+    module.exports = Encore.getWebpackConfig();
+
 
 Step 3: Configure Routes
 ~~~~~~~~~~~~~~~~~~~~~~~~

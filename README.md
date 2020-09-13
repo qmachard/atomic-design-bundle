@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="./doc/atomic-design-banner.png" alt="atomic-design" />
+    <img src="./src/Resources/doc/atomic-design-banner.png" alt="atomic-design" />
     <br />
     <a href="./LICENSE.md" title="Licence MIT">
         <img src="https://img.shields.io/packagist/l/qmachard/atomic-design-bundle" alt="Licence MIT" />
