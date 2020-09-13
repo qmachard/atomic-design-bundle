@@ -26,7 +26,7 @@ Step 1: Enabled the Bundle
 Step 2: Configure the Bundle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create file `atomic_design.yaml` into `config/packages/dev` folder. Setting you Encore entry points (default `app`).
+Create file ``atomic_design.yaml`` into ``config/packages/dev`` folder. Setting you Encore entry points (default ``app``).
 
 .. code-block:: yaml
 
@@ -35,7 +35,7 @@ Create file `atomic_design.yaml` into `config/packages/dev` folder. Setting you 
       css_entry_name: 'app'
       js_entry_name: 'app'
 
-Example of Webpack configuration using `app` entry point.
+Example of Webpack configuration using ``app`` entry point.
 
 .. code-block:: javascript
 
@@ -51,7 +51,7 @@ Example of Webpack configuration using `app` entry point.
 Step 3: Configure Routes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create file `atomic_design.yaml` into `config/routes/dev` folder.
+Create file ``atomic_design.yaml`` into ``config/routes/dev`` folder.
 
 .. code-block:: yaml
 
@@ -60,12 +60,12 @@ Create file `atomic_design.yaml` into `config/routes/dev` folder.
       resource: '@AtomicDesignBundle/Resources/config/routing/atomic_design.xml'
       prefix: /_atomic-design
 
-Routes will be defined only for `dev` environment.
+Routes will be defined only for ``dev`` environment.
 
 Step 4: Configure your Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create file `services_dev.yaml` (is not already exists) in `config` folder and add this configuration
+* Create file ``services_dev.yaml`` (is not already exists) in ``config`` folder and add this configuration.
 
 .. code-block:: yaml
 
@@ -76,6 +76,8 @@ Create file `services_dev.yaml` (is not already exists) in `config` folder and a
         tags: ['atomic_design.component']
         autoconfigure: true
         autowire: true
+
+* Create ``./tests/AtomicDesign/`` folder.
 
 Step 5: Install assets and clear cache
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,8 +121,8 @@ You just need to create all "Component" class you want.
         public function getStories(): array
         {
             return [
-                'Default' => 'default', // This will call `$this->default()` method.
-                'Colors' => 'colors',   // This will call `$this->colors()` method.
+                'Default' => 'default', // This will call ``$this->default()`` method.
+                'Colors' => 'colors',   // This will call ``$this->colors()`` method.
             ];
         }
 
