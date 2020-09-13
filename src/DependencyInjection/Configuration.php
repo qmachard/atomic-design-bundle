@@ -17,11 +17,9 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
             ->scalarNode('css_entry_name')
-                ->defaultValue('app')
                 ->info('Encore CSS entry name.')
             ->end()
             ->scalarNode('js_entry_name')
-                ->defaultValue('app')
                 ->info('Encore JS entry name.')
             ->end()
         ;

@@ -1,5 +1,11 @@
 {% extends '@AtomicDesign/layout.html.twig' %}
 
+{% block title %}
+    {{ component.name }}
+    {% if story is defined %} / {{ story }}{% endif %}
+    - {{ parent() }}
+{% endblock %}
+
 {% block body %}
 <div class="container-fluid component">
     {% include '@AtomicDesign/molecules/render.html.twig' with {

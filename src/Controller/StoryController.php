@@ -26,8 +26,8 @@ class StoryController extends AbstractController
     private $menuBuilder;
 
     public function __construct(
-        string $cssEntryName = '',
-        string $jsEntryName = '',
+        ?string $cssEntryName = null,
+        ?string $jsEntryName = null,
         ComponentProvider $componentProvider,
         Profiler $profiler,
         ComponentMenuBuilder $menuBuilder

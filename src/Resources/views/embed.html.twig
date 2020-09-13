@@ -6,14 +6,14 @@
     <title>Document</title>
 
     {% block stylesheets %}
-        {{ encore_entry_link_tags(css_entry_name) }}
+        {% if css_entry_name is not empty %}{{ encore_entry_link_tags(css_entry_name) }}{% endif %}
     {% endblock %}
 </head>
 <body>
     {{ render|raw }}
 
     {% block javascripts %}
-        {{ encore_entry_script_tags(js_entry_name) }}
+        {% if js_entry_name is not empty %}{{ encore_entry_script_tags(js_entry_name) }}{% endif %}
     {% endblock %}
 </body>
 </html>
