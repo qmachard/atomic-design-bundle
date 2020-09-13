@@ -25,6 +25,8 @@ Run the following command to install it in your application:
 $ composer require --dev qmachard/atomic-design-bundle
 ```
 
+Read the [Documentation](src/Resources/doc/index.rst) to configure this bundle.
+
 Documentation
 -------------
 

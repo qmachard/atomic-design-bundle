@@ -9,11 +9,21 @@ Run the following command to install it in your application:
 
     $ composer require --dev qmachard/atomic-design-bundle
 
-Manual Installation
--------------------
+Webpack Encore Configuration
+----------------------------
+
+This playground use Webpack Encore Bundle to manage CSS and JS.
+
+Check the bundle documentation to enable and configure it :
+
+* `Installing Encore <https://symfony.com/doc/current/frontend/encore/installation.html>`
+* `Setting up your Project <https://symfony.com/doc/current/frontend/encore/simple-example.html>`
+
+Bundle Configuration
+--------------------
 
 Step 1: Enabled the Bundle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: php
 
@@ -23,8 +33,8 @@ Step 1: Enabled the Bundle
        QuentinMachard\Bundle\AtomicDesignBundle\AtomicDesignBundle::class => ['dev' => true],
     ];
 
-Step 2: Configure the Bundle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 2: Configure the Bundle (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create file ``atomic_design.yaml`` into ``config/packages/dev`` folder. Setting you Encore entry points (default ``app``).
 
@@ -84,6 +94,7 @@ Step 5: Install assets and clear cache
 
 .. code-block:: yaml
 
+    $ yarn install && yarn build
     $ php bin/console assets:install
     $ php bin/console cache:clear
 
@@ -121,8 +132,8 @@ You just need to create all "Component" class you want.
         public function getStories(): array
         {
             return [
-                'Default' => 'default', // This will call ``$this->default()`` method.
-                'Colors' => 'colors',   // This will call ``$this->colors()`` method.
+                'Default' => 'default', // This will call `$this->default()` method.
+                'Colors' => 'colors',   // This will call `$this->colors()` method.
             ];
         }
 

@@ -28,12 +28,7 @@ class AtomicDesignExtension extends Extension
 
         $definition = $container->getDefinition('atomic_design.controller.story');
 
-        if (array_key_exists('css_entry_name', $config)) {
-            $definition->setArgument(0, $config['css_entry_name']);
-        }
-
-        if (array_key_exists('js_entry_name', $config)) {
-            $definition->setArgument(1, $config['js_entry_name']);
-        }
+        $definition->setArgument(0, $config['css_entry_name']);
+        $definition->setArgument(1, $config['js_entry_name']);
     }
 }
