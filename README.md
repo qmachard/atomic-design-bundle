@@ -14,6 +14,8 @@
 
 Atomic Design is a StoryBook like bundle made for Symfony.
 
+Check out the demo : https://github.com/qmachard/atomic-design-demo-symfony
+
 Installation
 ------------
 
