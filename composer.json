@@ -11,7 +11,7 @@
         "front-end",
         "css"
     ],
-    "homepage": "",
+    "homepage": "https://github.com/qmachard/atomic-design-bundle",
     "license": "MIT",
     "authors": [
         {
@@ -22,7 +22,6 @@
     "require": {
         "php": "^7.3",
         "symfony/framework-bundle": "4.4.*",
-        "qmachard/atomic-design-bundle": "*",
         "symfony/webpack-encore-bundle": "^1.7"
     },
     "config": {

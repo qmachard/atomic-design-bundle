@@ -5,20 +5,29 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <defaults autowire="true" autoconfigure="true" public="false"/>
+        <defaults autowire="true" autoconfigure="true" public="false">
+            <bind key="QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProviderInterface"
+                  type="service"
+                  id="atomic_design.provider.component"/>
+
+            <bind key="QuentinMachard\Bundle\AtomicDesignBundle\Menu\ComponentMenuBuilderInterface"
+                  type="service"
+                  id="atomic_design.menu_builder.component"/>
+        </defaults>
+
+        <service id="atomic_design.param_converter.component" class="QuentinMachard\Bundle\AtomicDesignBundle\ParamConverter\ComponentParamConverter">
+            <tag name="request.param_converter"/>
+        </service>
 
         <service id="atomic_design.provider.component" class="QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProvider"/>
 
         <service id="atomic_design.controller.story" class="QuentinMachard\Bundle\AtomicDesignBundle\Controller\StoryController" public="true">
-            <argument type="string"/>
-            <argument type="string"/>
-            <argument type="service" id="atomic_design.provider.component"/>
-            <argument type="service" id="profiler"/>
-            <argument type="service" id="atomic_design.menu_builder"/>
+            <argument type="string" key="$cssEntryName" />
+            <argument type="string" key="$jsEntryName"/>
+            <argument type="service" key="$profiler" id="profiler" />
         </service>
 
-        <service id="atomic_design.menu_builder" class="QuentinMachard\Bundle\AtomicDesignBundle\Menu\ComponentMenuBuilder">
-            <argument type="service" id="atomic_design.provider.component"/>
-        </service>
+        <service id="atomic_design.menu_builder.component"
+                 class="QuentinMachard\Bundle\AtomicDesignBundle\Menu\ComponentMenuBuilder"/>
     </services>
 </container>

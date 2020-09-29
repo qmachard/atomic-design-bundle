@@ -6,7 +6,7 @@ namespace QuentinMachard\Bundle\AtomicDesignBundle\Provider;
 
 use QuentinMachard\Bundle\AtomicDesignBundle\Model\ComponentInterface;
 
-class ComponentProvider
+class ComponentProvider implements ComponentProviderInterface
 {
     /**
      * @var ComponentInterface[]

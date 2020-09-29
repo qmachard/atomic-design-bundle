@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace QuentinMachard\Bundle\AtomicDesignBundle\Menu;
 
-use QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProvider;
+use QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProviderInterface;
 
-class ComponentMenuBuilder
+class ComponentMenuBuilder implements ComponentMenuBuilderInterface
 {
     private static $levelPattern = '/(.*)\|(.*)/m';
 
-    /** @var ComponentProvider */
+    /** @var ComponentProviderInterface */
     private $componentProvider;
 
     /** @var array */
     private $menu;
 
-    public function __construct(ComponentProvider $componentProvider)
+    public function __construct(ComponentProviderInterface $componentProvider)
     {
         $this->componentProvider = $componentProvider;
     }

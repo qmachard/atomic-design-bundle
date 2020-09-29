@@ -4,33 +4,35 @@ declare(strict_types=1);
 
 namespace QuentinMachard\Bundle\AtomicDesignBundle\Controller;
 
-use QuentinMachard\Bundle\AtomicDesignBundle\Menu\ComponentMenuBuilder;
-use QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProvider;
+use QuentinMachard\Bundle\AtomicDesignBundle\Menu\ComponentMenuBuilderInterface;
+use QuentinMachard\Bundle\AtomicDesignBundle\Model\Component;
+use QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProviderInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Profiler\Profiler;
 
 class StoryController extends AbstractController
 {
-    /** @var ComponentProvider */
-    private $componentProvider;
-
     /** @var string */
     private $cssEntryName;
 
     /** @var string */
     private $jsEntryName;
 
-    /** @var ComponentMenuBuilder */
+    /** @var ComponentProviderInterface */
+    private $componentProvider;
+
+    /** @var ComponentMenuBuilderInterface */
     private $menuBuilder;
 
     public function __construct(
         ?string $cssEntryName = null,
         ?string $jsEntryName = null,
-        ComponentProvider $componentProvider,
-        Profiler $profiler,
-        ComponentMenuBuilder $menuBuilder
+        ComponentProviderInterface $componentProvider,
+        ComponentMenuBuilderInterface $menuBuilder,
+        Profiler $profiler
     ) {
         $profiler->disable();
 
@@ -56,15 +58,11 @@ class StoryController extends AbstractController
         throw new NotFoundHttpException('No Stories Found.');
     }
 
-    public function view(string $component, string $story = ''): Response
+    public function view(Component $component, Request $request): Response
     {
-        $component = $this->componentProvider->getComponent($component);
+        $story = $request->get('story', null);
 
-        if (null === $component) {
-            throw new NotFoundHttpException('Component not found');
-        }
-
-        if ('' === $story) {
+        if (null === $story) {
             $story = $component->getDefaultStory();
         }
 

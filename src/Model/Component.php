@@ -33,6 +33,16 @@ abstract class Component implements ComponentInterface
     }
 
     /**
+     * @return string
+     */
+    public function getDefaultStory(): string
+    {
+        $stories = $this->getStories();
+
+        return current($stories);
+    }
+
+    /**
      * @inheritDoc
      */
     final public function renderStory(string $name): string
