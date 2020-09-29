@@ -21,7 +21,7 @@
     ],
     "require": {
         "php": "^7.3",
-        "symfony/framework-bundle": "5.1.*",
+        "symfony/framework-bundle": "4.4.*",
         "qmachard/atomic-design-bundle": "*",
         "symfony/webpack-encore-bundle": "^1.7"
     },
