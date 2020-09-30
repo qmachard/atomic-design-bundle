@@ -22,9 +22,9 @@
         <service id="atomic_design.provider.component" class="QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProvider"/>
 
         <service id="atomic_design.controller.story" class="QuentinMachard\Bundle\AtomicDesignBundle\Controller\StoryController" public="true">
-            <argument type="string" key="$cssEntryName" />
-            <argument type="string" key="$jsEntryName"/>
-            <argument type="service" key="$profiler" id="profiler" />
+            <argument type="string" key="$cssEntryName" on-invalid="null" />
+            <argument type="string" key="$jsEntryName" on-invalid="null" />
+            <argument type="service" key="$profiler" id="profiler" on-invalid="null" />
         </service>
 
         <service id="atomic_design.menu_builder.component"

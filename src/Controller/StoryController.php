@@ -28,13 +28,15 @@ class StoryController extends AbstractController
     private $menuBuilder;
 
     public function __construct(
-        ?string $cssEntryName = null,
-        ?string $jsEntryName = null,
+        ?string $cssEntryName,
+        ?string $jsEntryName,
         ComponentProviderInterface $componentProvider,
         ComponentMenuBuilderInterface $menuBuilder,
-        Profiler $profiler
+        ?Profiler $profiler
     ) {
-        $profiler->disable();
+        if (null !== $profiler) {
+            $profiler->disable();
+        }
 
         $this->componentProvider = $componentProvider;
         $this->cssEntryName = $cssEntryName;
