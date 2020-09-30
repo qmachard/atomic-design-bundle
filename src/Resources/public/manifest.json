@@ -1,4 +1,4 @@
 {
-  "bundles/atomic-design/app.css": "./app.css",
-  "bundles/atomic-design/app.js": "./app.js"
+  "bundles/atomic-design/app.css": "/app.css",
+  "bundles/atomic-design/app.js": "/app.js"
 }

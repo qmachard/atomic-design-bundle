@@ -2,7 +2,7 @@ var Encore = require('@symfony/webpack-encore');
 
 Encore
   .setOutputPath('./src/Resources/public/')
-  .setPublicPath('./')
+  .setPublicPath('/')
   .setManifestKeyPrefix('bundles/atomic-design')
 
   .cleanupOutputBeforeBuild()
