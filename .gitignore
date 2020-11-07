@@ -11,3 +11,5 @@ test/app/logs
 .DS_Store
 
 node_modules
+
+!tests/app/**/*
