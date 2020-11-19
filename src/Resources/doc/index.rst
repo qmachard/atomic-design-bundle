@@ -144,7 +144,7 @@ You just need to create all "Component" class you want.
          */
         public function default(): string
         {
-            return $this->render('@components/atoms/button/button.html.twig', [
+            return $this->render('components/atoms/button/button.html.twig', [
                 'props' => [
                     'label' => 'My awesome button',
                 ]
@@ -163,7 +163,7 @@ You just need to create all "Component" class you want.
             $buttons = [];
 
             foreach ($colors as $color) {
-                $buttons[] = $this->render('@components/atoms/button/button.html.twig', [
+                $buttons[] = $this->render('components/atoms/button/button.html.twig', [
                     'props' => [
                         'label' => ucfirst($color),
                         'class_modifiers' => [$color]
