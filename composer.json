@@ -22,7 +22,7 @@
     "require": {
         "php": "^7.1",
         "symfony/framework-bundle": "^4.4||^5.0",
-        "symfony/webpack-encore-bundle": "^1.7"
+        "symfony/webpack-encore-bundle": "^1.8"
     },
     "config": {
         "bin-dir": "bin"
