@@ -24,10 +24,18 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - php: 7.1
+            symfony: ${SYMFONY_LATEST}
+          - php: 7.2
+            symfony: ${SYMFONY_LATEST}
+          - php: 7.3
+            symfony: ${SYMFONY_LATEST}
           - php: 7.4
             symfony: ${SYMFONY_LTS}
           - php: 7.4
             symfony: ${SYMFONY_LATEST}
+          - php: 7.4
+            symfony: ${SYMFONY_DEV}
           - php: 8.0
             symfony: ${SYMFONY_LATEST}
 
