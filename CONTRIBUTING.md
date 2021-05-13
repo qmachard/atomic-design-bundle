@@ -5,7 +5,7 @@
 ### Requirements
 
 * Symfony CLI ≥ 4.18
-* PHP ≥ 7.3
+* PHP ≥ 7.4
 * Composer ≥ 1.10
 * Node ≥ 12.5
 * Yarn ≥ 1.21
@@ -47,4 +47,4 @@ $ symfony server:start
 ```
 
 * You can go to http://127.0.0.1:8000
-*  You can find Atomic Design Playground on http://127.0.0.1:8000/_atomic-design
+* You can find Atomic Design Playground on http://127.0.0.1:8000/_atomic-design
