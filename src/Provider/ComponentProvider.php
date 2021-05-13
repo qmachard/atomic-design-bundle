@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace QuentinMachard\Bundle\AtomicDesignBundle\Provider;
 
+use InvalidArgumentException;
 use QuentinMachard\Bundle\AtomicDesignBundle\Model\ComponentInterface;
 
 class ComponentProvider implements ComponentProviderInterface
@@ -11,11 +12,21 @@ class ComponentProvider implements ComponentProviderInterface
     /**
      * @var ComponentInterface[]
      */
-    private $components;
+    private $components = [];
 
     public function __construct(array $components)
     {
-        $this->components = $components;
+        foreach ($components as $component) {
+            if (false === $component instanceof ComponentInterface) {
+                throw new InvalidArgumentException(sprintf(
+                    'The class "%s" neither implements "%s".',
+                    get_debug_type($component),
+                    ComponentInterface::class
+                ));
+            }
+
+            $this->components[] = $component;
+        }
     }
 
     public function getComponents(): array
