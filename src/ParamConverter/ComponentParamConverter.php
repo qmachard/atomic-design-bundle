@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace QuentinMachard\Bundle\AtomicDesignBundle\ParamConverter;
 
 use QuentinMachard\Bundle\AtomicDesignBundle\Model\Component;
+use QuentinMachard\Bundle\AtomicDesignBundle\Model\ComponentInterface;
 use QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProviderInterface;
 use ReflectionClass;
 use ReflectionException;
@@ -33,7 +34,7 @@ class ComponentParamConverter implements ParamConverterInterface
         $componentName = $request->attributes->get($name);
 
         if (null === $componentName) {
-            $configuration->setIsOptional(true);
+            return false;
         }
 
         $component = $this->componentProvider->getComponent($componentName);
@@ -51,7 +52,7 @@ class ComponentParamConverter implements ParamConverterInterface
 
     public function supports(ParamConverter $configuration)
     {
-        return Component::class === $configuration->getClass();
+        return ComponentInterface::class === $configuration->getClass() || Component::class === $configuration->getClass();
     }
 
     /**
