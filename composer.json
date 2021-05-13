@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "QuentinMachard\\Bundle\\AtomicDesignBundle\\": "src"
+            "QuentinMachard\\Bundle\\AtomicDesignBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "QuentinMachard\\Bundle\\AtomicDesignBundle\\spec\\": "spec"
+            "spec\\QuentinMachard\\Bundle\\AtomicDesignBundle\\": "spec/"
         }
     },
     "repositories": [
@@ -42,5 +42,8 @@
             "type": "path",
             "url": "src"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpspec/phpspec": "^7.0"
+    }
 }
