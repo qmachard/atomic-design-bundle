@@ -25,11 +25,11 @@ abstract class Component implements ComponentInterface
     /**
      * Get the Category.
      *
-     * @return string
+     * @return string|null
      */
-    public function getCategory(): string
+    public function getCategory(): ?string
     {
-        return 'Global';
+        return null;
     }
 
     /**
