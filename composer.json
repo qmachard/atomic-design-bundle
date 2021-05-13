@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "^7.1|^8.0",
+        "php": "^7.3|^8.0",
         "symfony/framework-bundle": "^4.4||^5.0",
         "symfony/webpack-encore-bundle": "^1.8",
         "sensio/framework-extra-bundle": "^5.1"
