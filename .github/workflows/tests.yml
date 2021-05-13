@@ -1,0 +1,50 @@
+name: Tests
+
+env:
+  PHPUNIT_FLAGS: "-v"
+  SYMFONY_PHPUNIT_DIR: "$HOME/symfony-bridge/.phpunit"
+  SYMFONY_LTS: 4.4.*
+  SYMFONY_LATEST: 5.2.*
+  SYMFONY_DEV: 5.3.*
+
+on:
+  push: ~
+  pull_request: ~
+  release:
+    types: [ created ]
+  schedule:
+    -   cron: "0 1 * * 6" # Run at 1am every Saturday
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    name: "PHP ${{ matrix.php }}${{ matrix.symfony != '' && format(', Symfony {0}', matrix.symfony) || '' }}"
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php: 7.4
+            symfony: ${SYMFONY_LTS}
+          - php: 7.4
+            symfony: ${SYMFONY_LATEST}
+          - php: 8.0
+            symfony: ${SYMFONY_LATEST}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ matrix.php }}"
+          coverage: none
+
+      - name: Install dependencies
+        run: composer install
+
+      - name: Validate composer.json
+        run: composer validate --strict --no-check-lock
+
+      - name: Run phpspec
+        run: bin/phpspec run --no-interaction -f dot
