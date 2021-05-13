@@ -18,7 +18,7 @@ interface ComponentInterface
      *
      * @return string
      */
-    public function getCategory(): string;
+    public function getCategory(): ?string;
 
     /**
      * Get List of Stories.

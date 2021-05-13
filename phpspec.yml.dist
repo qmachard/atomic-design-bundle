@@ -1,0 +1,4 @@
+suites:
+    AtomicDesignBundle:
+        namespace: QuentinMachard\Bundle\AtomicDesignBundle
+        psr4_prefix: QuentinMachard\Bundle\AtomicDesignBundle

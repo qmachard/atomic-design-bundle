@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace QuentinMachard\Bundle\AtomicDesignBundle\Menu;
 
+use QuentinMachard\Bundle\AtomicDesignBundle\Model\ComponentInterface;
 use QuentinMachard\Bundle\AtomicDesignBundle\Provider\ComponentProviderInterface;
 
 class ComponentMenuBuilder implements ComponentMenuBuilderInterface
 {
-    private static $levelPattern = '/(.*)\|(.*)/m';
+    private $levelSeparator;
 
     /** @var ComponentProviderInterface */
     private $componentProvider;
@@ -16,9 +17,10 @@ class ComponentMenuBuilder implements ComponentMenuBuilderInterface
     /** @var array */
     private $menu;
 
-    public function __construct(ComponentProviderInterface $componentProvider)
+    public function __construct(ComponentProviderInterface $componentProvider, string $levelSeparator = '|')
     {
         $this->componentProvider = $componentProvider;
+        $this->levelSeparator = $levelSeparator;
     }
 
     public function createView(): array
@@ -34,14 +36,23 @@ class ComponentMenuBuilder implements ComponentMenuBuilderInterface
     {
         $menu = [];
 
+        /** @var ComponentInterface $component */
         foreach ($this->componentProvider->getComponents() as $component) {
-            $names = $this->extractNames($component->getName());
+            $category = $component->getCategory();
+            $name = $component->getName();
 
-            if (!array_key_exists($names['category'], $menu)) {
-                $menu[$names['category']] = [];
+            if (null === $category) {
+                extract($this->extractNames($component->getName()));
             }
 
-            $menu[$names['category']][$names['component']] = $component->getStories();
+            $category = trim($category);
+            $name = trim($name);
+
+            if (!array_key_exists($category, $menu)) {
+                $menu[$category] = [];
+            }
+
+            $menu[$category][$name] = $component->getStories();
         }
 
         return $menu;
@@ -49,17 +60,25 @@ class ComponentMenuBuilder implements ComponentMenuBuilderInterface
 
     private function extractNames(string $name): array
     {
-        if (preg_match(self::$levelPattern, $name, $matches)) {
-            $category = $matches[1];
-            $component = $matches[2];
-        } else {
-            $category = 'Default';
-            $component = $name;
+        $parts = explode($this->levelSeparator, $name);
+
+        if (count($parts) === 1) {
+            return [
+                'category' => 'Default',
+                'name' => $parts[0],
+            ];
+        }
+
+        if (count($parts) > 2) {
+            return [
+                'category' => array_shift($parts),
+                'name' => implode($this->levelSeparator, $parts),
+            ];
         }
 
         return [
-            'category' => $category,
-            'component' => $component,
+            'category' => $parts[0],
+            'name' => $parts[1],
         ];
     }
 }
