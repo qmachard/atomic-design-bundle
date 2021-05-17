@@ -47,7 +47,12 @@ jobs:
         run: composer update
 
       - name: Install testing app dependencies
-        run: cd tests/app && composer update && cd ../../
+        run: |
+          cd tests/app
+          composer update
+          yarn install
+          yarn build
+          cd ../../
 
       - name: Validate composer.json
         run: composer validate --strict --no-check-lock
