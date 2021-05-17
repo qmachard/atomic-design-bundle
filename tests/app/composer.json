@@ -3,8 +3,6 @@
     "description": "Test application for AtomicDesignBundle.",
     "type": "project",
     "license": "proprietary",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": ">=7.2.5",
         "ext-ctype": "*",
