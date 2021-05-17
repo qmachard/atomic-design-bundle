@@ -10,6 +10,9 @@
     <a href="https://packagist.org/packages/qmachard/atomic-design-bundle" title="PHP 7.3">
         <img src="https://img.shields.io/packagist/php-v/qmachard/atomic-design-bundle" alt="PHP 7.3" />
     </a>
+    <a href="https://github.com/qmachard/atomic-design-bundle/actions/workflows/tests.yml" title="Tests">
+        <img src="https://img.shields.io/github/workflow/status/qmachard/atomic-design-bundle/Tests" />
+    </a>
 </h1>
 
 Atomic Design is a StoryBook like bundle made for Symfony.
