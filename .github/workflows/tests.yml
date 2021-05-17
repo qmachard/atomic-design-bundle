@@ -57,4 +57,4 @@ jobs:
         run: bin/phpspec run --no-interaction -f dot
 
       - name: Run PHPUnit
-        run: bin/simple-phpunit
+        run: bin/simple-phpunit -v
