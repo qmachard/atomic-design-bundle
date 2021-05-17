@@ -38,12 +38,17 @@ class ComponentMenuBuilder implements ComponentMenuBuilderInterface
 
         /** @var ComponentInterface $component */
         foreach ($this->componentProvider->getComponents() as $component) {
-            $category = $component->getCategory();
+            $category = null;
             $name = $component->getName();
 
-            if (null === $category) {
-                extract($this->extractNames($component->getName()));
+            if (method_exists($component, 'getCategory')) {
+                trigger_deprecation(
+                    'qmachard/atomic-design-bundle',
+                    '1.0.8',
+                    'You should define category by using getName method with a separator (eg. "Atoms|Button").');
             }
+
+            extract($this->extractNames($component->getName()));
 
             $category = trim($category);
             $name = trim($name);

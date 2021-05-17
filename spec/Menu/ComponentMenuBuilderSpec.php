@@ -22,11 +22,9 @@ class ComponentMenuBuilderSpec extends ObjectBehavior
         $this->beConstructedWith($componentProvider);
 
         $someComponent->getName()->willReturn('Some Component');
-        $someComponent->getCategory()->willReturn(null);
         $someComponent->getStories()->willReturn(['Some Story', 'Another Story']);
 
         $anotherComponent->getName()->willReturn(' Another Component');
-        $anotherComponent->getCategory()->willReturn(null);
         $anotherComponent->getStories()->willReturn([]);
 
         $componentProvider->getComponents()->willReturn([$someComponent, $anotherComponent]);
@@ -71,28 +69,6 @@ class ComponentMenuBuilderSpec extends ObjectBehavior
 
         $result['Default']['Another Component']->shouldBeArray();
         $result['Default']['Another Component']->shouldHaveCount(0);
-    }
-
-    function it_should_build_menu_with_defined_category()
-    {
-        $this->someComponent->getCategory()->willReturn('Some Category');
-        $this->anotherComponent->getCategory()->willReturn('Another Category');
-
-        $result = $this->createView();
-        $result->shouldBeArray();
-        $result->shouldHaveCount(2);
-        $result->shouldHaveKey('Some Category');
-        $result->shouldHaveKey('Another Category');
-
-        $result['Some Category']->shouldBeArray();
-        $result['Some Category']->shouldHaveCount(1);
-        $result['Some Category']->shouldHaveKey('Some Component');
-        $result['Some Category']->shouldNotHaveKey('Another Component');
-
-        $result['Another Category']->shouldBeArray();
-        $result['Another Category']->shouldHaveCount(1);
-        $result['Another Category']->shouldHaveKey('Another Component');
-        $result['Another Category']->shouldNotHaveKey('Some Component');
     }
 
     function it_should_build_menu_with_parsed_category()

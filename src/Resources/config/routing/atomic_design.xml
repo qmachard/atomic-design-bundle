@@ -4,9 +4,9 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://symfony.com/schema/routing https://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="_atomic_design_index" controller="atomic_design.controller.story:index" path="/"/>
+    <route id="_atomic_design_index" controller="atomic_design.controller.story::index" path="/"/>
 
-    <route id="_atomic_design_view" controller="atomic_design.controller.story:view" path="/{component}"/>
+    <route id="_atomic_design_view" controller="atomic_design.controller.story::view" path="/{component}"/>
 
-    <route id="_atomic_design_embed" controller="atomic_design.controller.story:embed" path="/{component}/{story}/embed"/>
+    <route id="_atomic_design_embed" controller="atomic_design.controller.story::embed" path="/{component}/{story}/embed"/>
 </routes>
