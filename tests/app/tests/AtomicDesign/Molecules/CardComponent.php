@@ -10,7 +10,7 @@ class CardComponent extends Component
 {
     public function getName(): string
     {
-        return 'Atoms|Card';
+        return 'Molecules|Card';
     }
 
     public function getStories(): array
