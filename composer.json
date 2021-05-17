@@ -22,8 +22,13 @@
     "require": {
         "php": "^7.3|^8.0",
         "symfony/framework-bundle": "^4.4||^5.0",
-        "symfony/webpack-encore-bundle": "^1.8",
-        "sensio/framework-extra-bundle": "^5.1"
+        "sensio/framework-extra-bundle": "^5.1",
+        "symfony/twig-bundle": "^5.2",
+        "symfony/webpack-encore-bundle": "^1.8"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^7.0",
+        "symfony/test-pack": "^1.0"
     },
     "config": {
         "bin-dir": "bin"
@@ -35,7 +40,9 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "spec\\QuentinMachard\\Bundle\\AtomicDesignBundle\\": "spec/"
+            "spec\\QuentinMachard\\Bundle\\AtomicDesignBundle\\": "spec/",
+            "QuentinMachard\\Bundle\\AtomicDesignBundle\\Tests\\": "tests/",
+            "QuentinMachard\\Bundle\\AtomicDesignBundle\\Tests\\App\\": "tests/app/src/"
         }
     },
     "repositories": [
@@ -43,8 +50,5 @@
             "type": "path",
             "url": "src"
         }
-    ],
-    "require-dev": {
-        "phpspec/phpspec": "^7.0"
-    }
+    ]
 }

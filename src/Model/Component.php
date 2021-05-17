@@ -23,16 +23,6 @@ abstract class Component implements ComponentInterface
     }
 
     /**
-     * Get the Category.
-     *
-     * @return string|null
-     */
-    public function getCategory(): ?string
-    {
-        return null;
-    }
-
-    /**
      * @return string
      */
     public function getDefaultStory(): string

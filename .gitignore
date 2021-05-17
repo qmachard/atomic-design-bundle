@@ -9,6 +9,7 @@ test/app/logs
 
 .idea
 .DS_Store
+.phpunit.result.cache
 
 node_modules
 

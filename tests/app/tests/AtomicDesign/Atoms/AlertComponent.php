@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\AtomicDesign\Components\Atoms;
+namespace QuentinMachard\Bundle\AtomicDesignBundle\Tests\App\Tests\AtomicDesign\Atoms;
 
 use QuentinMachard\Bundle\AtomicDesignBundle\Model\Component;
 
@@ -24,10 +24,10 @@ class AlertComponent extends Component
     {
         $colors = ['secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
 
-        $buttons = [];
+        $alerts = [];
 
         foreach ($colors as $color) {
-            $buttons[] = $this->render('@components/atoms/alert/alert.html.twig', [
+            $alerts[] = $this->render('@components/atoms/alert/alert.html.twig', [
                 'props' => [
                     'text' => 'A simple ' . ucfirst($color) . ' alert !',
                     'color' => $color
@@ -35,6 +35,6 @@ class AlertComponent extends Component
             ]);
         }
 
-        return join(' ', $buttons);
+        return join(' ', $alerts);
     }
 }

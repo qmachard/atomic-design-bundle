@@ -9,7 +9,6 @@ env:
 
 on:
   push: ~
-  pull_request: ~
   release:
     types: [ created ]
   schedule:
@@ -44,11 +43,22 @@ jobs:
           php-version: "${{ matrix.php }}"
           coverage: none
 
-      - name: Install dependencies
-        run: composer update
-
       - name: Validate composer.json
         run: composer validate --strict --no-check-lock
 
-      - name: Run phpspec
+      - name: Install dependencies
+        run: composer update
+
+      - name: Run PHPSpec
         run: bin/phpspec run --no-interaction -f dot
+
+      - name: Install and build testing app
+        run: |
+          cd tests/app
+          composer update
+          yarn install
+          yarn build
+          cd ../../
+
+      - name: Run PHPUnit
+        run: bin/simple-phpunit -v

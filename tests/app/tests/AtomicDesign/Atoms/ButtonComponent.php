@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\AtomicDesign\Components\Atoms;
+namespace QuentinMachard\Bundle\AtomicDesignBundle\Tests\App\Tests\AtomicDesign\Atoms;
 
 use QuentinMachard\Bundle\AtomicDesignBundle\Model\Component;
 
