@@ -1,5 +1,5 @@
 services:
-  App\Tests\AtomicDesign\:
+  QuentinMachard\Bundle\AtomicDesignBundle\Tests\App\Tests\AtomicDesign\:
     resource: '../tests/AtomicDesign/*'
     autoconfigure: true
     autowire: true
