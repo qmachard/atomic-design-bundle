@@ -9,7 +9,6 @@ env:
 
 on:
   push: ~
-  pull_request: ~
   release:
     types: [ created ]
   schedule:
