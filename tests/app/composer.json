@@ -17,6 +17,7 @@
         "symfony/yaml": "5.2.*"
     },
     "require-dev": {
+        "symfony/browser-kit": "5.2.*"
     },
     "config": {
         "optimize-autoloader": true,
