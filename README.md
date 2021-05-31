@@ -5,7 +5,7 @@
         <img src="https://img.shields.io/packagist/l/qmachard/atomic-design-bundle" alt="Licence MIT" />
     </a>
     <a href="https://packagist.org/packages/qmachard/atomic-design-bundle" title="Packagist">
-        <img src="https://img.shields.io/packagist/v/qmachard/atomic-design-bundle?include_prereleases" alt="Release Packagist" />
+        <img src="https://img.shields.io/packagist/v/qmachard/atomic-design-bundle" alt="Release Packagist" />
     </a>
     <a href="https://packagist.org/packages/qmachard/atomic-design-bundle" title="PHP 7.3">
         <img src="https://img.shields.io/packagist/php-v/qmachard/atomic-design-bundle" alt="PHP 7.3" />
