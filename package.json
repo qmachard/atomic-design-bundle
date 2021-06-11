@@ -6,14 +6,14 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@symfony/webpack-encore": "^1.1.2"
+    "@symfony/webpack-encore": "^1.4.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
-    "sass-loader": "^11.1.1"
+    "sass-loader": "^12.1.0"
   },
   "scripts": {
     "dev-server": "encore dev-server",
