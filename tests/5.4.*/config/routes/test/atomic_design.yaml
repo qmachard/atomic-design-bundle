@@ -1,3 +1,0 @@
-_atomic_design:
-  resource: '@AtomicDesignBundle/Resources/config/routing/atomic_design.xml'
-  prefix: /_atomic-design

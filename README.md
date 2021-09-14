@@ -13,11 +13,16 @@
     <a href="https://github.com/qmachard/atomic-design-bundle/actions/workflows/tests.yml" title="Tests">
         <img src="https://img.shields.io/github/workflow/status/qmachard/atomic-design-bundle/Tests" />
     </a>
+    <a href="https://discord.com/invite/TzyhKGFRKM" title="Discord">
+        <img alt="Discord" src="https://img.shields.io/discord/857610795771494401?label=discord">
+    </a>
 </h1>
 
 Atomic Design is a StoryBook like bundle made for Symfony.
 
-Check out the demo : https://github.com/qmachard/atomic-design-demo-symfony
+🪄 Check out the demo : https://github.com/qmachard/atomic-design-demo-symfony
+
+🎥 See the talk of this subject during AFUP Day 2021 (FR) : https://www.youtube.com/watch?v=QaK1sKtaafM
 
 Installation
 ------------
@@ -36,6 +41,8 @@ Documentation
 -------------
 
 Read [Documentation](src/Resources/doc/index.rst) for manual installation and create your first component.
+
+You need help ? [Checkout the Discord](https://discord.com/invite/TzyhKGFRKM)
 
 Contributing
 ------------
