@@ -4,9 +4,8 @@ env:
   PHPUNIT_FLAGS: "-v"
   SYMFONY_PHPUNIT_DIR: "$HOME/symfony-bridge/.phpunit"
   SYMFONY_LTS: 4.4.*
-  SYMFONY_LATEST: 5.3.*
-  SYMFONY_NEXT: 5.4.*
-  SYMFONY_FUTURE: 6.0.*
+  SYMFONY_LATEST: 5.2.*
+  SYMFONY_NEXT: 5.3.*
 
 on:
   push: ~
@@ -30,12 +29,10 @@ jobs:
             symfony: ${SYMFONY_LTS}
           - php: 7.4
             symfony: ${SYMFONY_LATEST}
-#          - php: 7.4
-#            symfony: ${SYMFONY_NEXT}
+          - php: 7.4
+            symfony: ${SYMFONY_NEXT}
           - php: 8.0
             symfony: ${SYMFONY_LATEST}
-          - php: 8.0
-            symfony: ${SYMFONY_FUTURE}
 
     steps:
       - uses: actions/checkout@v2
