@@ -1,0 +1,73 @@
+{
+    "name": "qmachard/atomic-design-test",
+    "description": "Test application for AtomicDesignBundle.",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.2.5",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "qmachard/atomic-design-bundle": "*",
+        "symfony/console": "5.3.*",
+        "symfony/dotenv": "5.3.*",
+        "symfony/flex": "^1.3.1",
+        "symfony/framework-bundle": "5.3.*",
+        "symfony/yaml": "5.3.*"
+    },
+    "require-dev": {
+        "symfony/browser-kit": "5.3.*",
+        "symfony/css-selector": "5.3.*"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "QuentinMachard\\Bundle\\AtomicDesignBundle\\Tests\\App\\": "src/",
+            "QuentinMachard\\Bundle\\AtomicDesignBundle\\": "../../src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "QuentinMachard\\Bundle\\AtomicDesignBundle\\Tests\\App\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "5.3.*"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../"
+        }
+    ]
+}

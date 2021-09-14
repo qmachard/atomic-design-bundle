@@ -4,8 +4,8 @@ env:
   PHPUNIT_FLAGS: "-v"
   SYMFONY_PHPUNIT_DIR: "$HOME/symfony-bridge/.phpunit"
   SYMFONY_LTS: 4.4.*
-  SYMFONY_LATEST: 5.2.*
-  SYMFONY_NEXT: 5.3.*
+  SYMFONY_LATEST: 5.3.*
+  SYMFONY_NEXT: 5.4.*
 
 on:
   push: ~
@@ -60,7 +60,7 @@ jobs:
 
       - name: Install and build testing app
         run: |
-          cd tests/app
+          cd tests/${{ matrix.symfony }}
           composer update
           yarn install
           yarn build
