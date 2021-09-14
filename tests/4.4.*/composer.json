@@ -1,28 +1,22 @@
 {
-    "name": "qmachard/atomic-design-test",
-    "description": "Test application for AtomicDesignBundle.",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.2.5",
+        "php": ">=7.1.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "qmachard/atomic-design-bundle": "*",
-        "symfony/console": "5.3.*",
-        "symfony/dotenv": "5.3.*",
+        "symfony/console": "4.4.*",
+        "symfony/dotenv": "4.4.*",
         "symfony/flex": "^1.3.1",
-        "symfony/framework-bundle": "5.3.*",
-        "symfony/runtime": "5.3.*",
-        "symfony/yaml": "5.3.*"
+        "symfony/framework-bundle": "4.4.*",
+        "symfony/yaml": "4.4.*"
     },
     "require-dev": {
-        "symfony/browser-kit": "5.3.*",
-        "symfony/css-selector": "5.3.*"
     },
     "config": {
-        "optimize-autoloader": true,
         "preferred-install": {
             "*": "dist"
         },
@@ -40,9 +34,12 @@
         }
     },
     "replace": {
+        "paragonie/random_compat": "2.*",
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
-        "symfony/polyfill-php72": "*"
+        "symfony/polyfill-php71": "*",
+        "symfony/polyfill-php70": "*",
+        "symfony/polyfill-php56": "*"
     },
     "scripts": {
         "auto-scripts": {
@@ -62,7 +59,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "5.3.*"
+            "require": "4.4.*"
         }
     },
     "repositories": [
