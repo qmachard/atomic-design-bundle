@@ -4,6 +4,7 @@ bin/
 composer.phar
 composer.lock
 
+!tests/**/bin
 tests/**/cache
 tests/**/logs
 
