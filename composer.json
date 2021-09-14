@@ -28,7 +28,7 @@
     },
     "require-dev": {
         "phpspec/phpspec": "^7.0",
-        "phpunit/phpunit": "^9.5"
+        "symfony/test-pack": "^1.0"
     },
     "config": {
         "bin-dir": "bin"
