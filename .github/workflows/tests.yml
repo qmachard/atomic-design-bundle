@@ -5,7 +5,7 @@ env:
   SYMFONY_PHPUNIT_DIR: "$HOME/symfony-bridge/.phpunit"
   SYMFONY_LTS: 4.4.*
   SYMFONY_LATEST: 5.2.*
-  SYMFONY_DEV: 5.3.*
+  SYMFONY_NEXT: 5.3.*
 
 on:
   push: ~
@@ -30,7 +30,7 @@ jobs:
           - php: 7.4
             symfony: ${SYMFONY_LATEST}
           - php: 7.4
-            symfony: ${SYMFONY_DEV}
+            symfony: ${SYMFONY_NEXT}
           - php: 8.0
             symfony: ${SYMFONY_LATEST}
 
@@ -42,6 +42,12 @@ jobs:
         with:
           php-version: "${{ matrix.php }}"
           coverage: none
+
+      - name: Restrict Symfony version
+        if: matrix.symfony != ''
+        run: |
+          composer global require --no-progress --no-scripts --no-plugins "symfony/flex:^1.10"
+          composer config extra.symfony.require "${{ matrix.symfony }}"
 
       - name: Validate composer.json
         run: composer validate --strict --no-check-lock
