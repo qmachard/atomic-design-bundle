@@ -8,6 +8,7 @@
 /vendor/
 composer.lock
 symfony.lock
+!bin/console
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

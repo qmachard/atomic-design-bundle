@@ -4,8 +4,9 @@ bin/
 composer.phar
 composer.lock
 
-test/app/cache
-test/app/logs
+!tests/**/bin
+tests/**/cache
+tests/**/logs
 
 .idea
 .DS_Store
@@ -14,4 +15,3 @@ test/app/logs
 node_modules
 yarn.lock
 
-!tests/app/**/*

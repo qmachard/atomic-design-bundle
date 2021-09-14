@@ -141,7 +141,7 @@ final class StoryControllerTest extends WebTestCase
                     $story = $stories->eq($k);
                     $storyLink = $story->filter('.menu_stories_link')->first();
 
-                    $this->assertEquals($expectedStory['story_name'], $storyLink->text());
+                    $this->assertEquals($expectedStory['story_name'], trim($storyLink->text()));
                     $this->assertEquals($expectedStory['story_link'], $storyLink->attr('href'));
                 }
             }
