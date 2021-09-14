@@ -30,8 +30,8 @@ jobs:
             symfony: ${SYMFONY_LTS}
           - php: 7.4
             symfony: ${SYMFONY_LATEST}
-          - php: 7.4
-            symfony: ${SYMFONY_NEXT}
+#          - php: 7.4
+#            symfony: ${SYMFONY_NEXT}
           - php: 8.0
             symfony: ${SYMFONY_LATEST}
           - php: 8.0
