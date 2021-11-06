@@ -21,6 +21,12 @@ class StoryController extends AbstractController
     /** @var string */
     private $jsEntryName;
 
+    /** @var string */
+    private $cssPackageName;
+
+    /** @var string */
+    private $jsPackageName;
+
     /** @var ComponentProviderInterface */
     private $componentProvider;
 
@@ -30,6 +36,8 @@ class StoryController extends AbstractController
     public function __construct(
         ?string $cssEntryName,
         ?string $jsEntryName,
+        ?string $cssPackageName,
+        ?string $jsPackageName,
         ComponentProviderInterface $componentProvider,
         ComponentMenuBuilderInterface $menuBuilder,
         ?Profiler $profiler
@@ -41,6 +49,8 @@ class StoryController extends AbstractController
         $this->componentProvider = $componentProvider;
         $this->cssEntryName = $cssEntryName;
         $this->jsEntryName = $jsEntryName;
+        $this->cssPackageName = $cssPackageName;
+        $this->jsPackageName = $jsPackageName;
         $this->menuBuilder = $menuBuilder;
     }
 
@@ -85,6 +95,8 @@ class StoryController extends AbstractController
             'render' => $render,
             'css_entry_name' => $this->cssEntryName,
             'js_entry_name' => $this->jsEntryName,
+            'css_package_name' => $this->cssPackageName,
+            'js_package_name' => $this->jsPackageName,
         ]);
     }
 }
