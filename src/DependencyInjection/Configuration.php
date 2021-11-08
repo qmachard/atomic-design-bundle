@@ -24,6 +24,14 @@ class Configuration implements ConfigurationInterface
                 ->defaultValue('app')
                 ->info('Encore JS entry name.')
             ->end()
+            ->scalarNode('css_package_name')
+                ->defaultNull()
+                ->info('Encore CSS package name.')
+            ->end()
+            ->scalarNode('js_package_name')
+            ->defaultNull()
+                ->info('Encore JS package name.')
+            ->end()
         ;
 
         return $treeBuilder;

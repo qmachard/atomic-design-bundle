@@ -6,14 +6,26 @@
     <title>Document</title>
 
     {% block stylesheets %}
-        {% if css_entry_name is not empty %}{{ encore_entry_link_tags(css_entry_name) }}{% endif %}
+        {% if css_entry_name is not empty %}
+            {% if css_package_name is not empty %}
+                {{ encore_entry_link_tags(css_entry_name, null, css_package_name) }}
+            {% else %}
+                {{ encore_entry_link_tags(css_entry_name) }}
+            {% endif %}
+        {% endif %}
     {% endblock %}
 </head>
 <body>
     {{ render|raw }}
 
     {% block javascripts %}
-        {% if js_entry_name is not empty %}{{ encore_entry_script_tags(js_entry_name) }}{% endif %}
+        {% if js_entry_name is not empty %}
+            {% if js_package_name is not empty %}
+                {{ encore_entry_link_tags(js_entry_name, null, js_package_name) }}
+            {% else %}
+                {{ encore_entry_link_tags(js_entry_name) }}
+            {% endif %}
+        {% endif %}
     {% endblock %}
 </body>
 </html>
