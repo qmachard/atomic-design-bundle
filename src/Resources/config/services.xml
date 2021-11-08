@@ -24,6 +24,8 @@
         <service id="atomic_design.controller.story" class="QuentinMachard\Bundle\AtomicDesignBundle\Controller\StoryController" public="true">
             <argument type="string" key="$cssEntryName" on-invalid="null" />
             <argument type="string" key="$jsEntryName" on-invalid="null" />
+            <argument type="string" key="$cssPackageName" on-invalid="null" />
+            <argument type="string" key="$jsPackageName" on-invalid="null" />
             <argument type="service" key="$profiler" id="profiler" on-invalid="null" />
         </service>
 

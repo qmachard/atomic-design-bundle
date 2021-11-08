@@ -30,5 +30,7 @@ class AtomicDesignExtension extends Extension
 
         $definition->setArgument(0, $config['css_entry_name']);
         $definition->setArgument(1, $config['js_entry_name']);
+        $definition->setArgument(2, $config['css_package_name']);
+        $definition->setArgument(3, $config['js_package_name']);
     }
 }
