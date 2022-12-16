@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@symfony/webpack-encore": "^1.4.0"
+    "@symfony/webpack-encore": "^4.2.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
